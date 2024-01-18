@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Produk</title>
+    <link rel="stylesheet" href="/asset/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1 class="h1 text-center">Profile Kajur BK</h1>
+        <div class="row" id="box-profile">
+        </div>
+    </div>
+    <script>
+        let data = ['kelpin', 'faizal', 'raden']
+        let siswa = {
+            nama: ' faizal', usia: 19, kelas: 'XII-RPL'
+        }
+        let jurusan = [
+            { nama: 'RPL', kajur: 'Joko Kristianto',photo:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN_yyD8gWHFkDT8NSCe4Nh6LTHzIqzomMcWwyPO8Rl9w&s'},
+            { nama: 'TP', kajur: 'Siti Hamidah N.' ,photo:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc_qTOWoinZotMDk64KG0pxFGdL9PfOylWhKToLvDXMvbuPQVEf0nTIQrcizsJDSYncss&usqp=CAU'},
+            { nama: 'TKRO', kajur: 'Rivan',photo:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV89bYvojyDbgP0grn8MA_88Zqex6JiqMT8scwSkIRrHCPVOltjSTOZ5vu29RsSERNJTQ&usqp=CAU' }
+        ]
+        // membuat looping
+            let komponen = ""
+            jurusan.forEach(klp=>{
+                komponen +=`
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="${klp.photo}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">${klp.kajur}</h5>
+                          <p class="card-text">${klp.nama}</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                `
+            })
+
+        // menampilkan data json
+        document.getElementById("box-profile").innerHTML = komponen
+
+        //console.log(data[0])
+
+        //console.log(siswa.kelas)
+
+        //console.log(siswa.usia)
+
+        //console.log(jurusan[1].nama) 
+    </script>
+</body>
+
+</html>
