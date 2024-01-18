@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan - 18 Januari</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+</head>
+<body>
+        <button class="btn btn-primary" id="tombol1" onclick="alert('Pesan Tombol 1')">Klik !</button>
+        <button class="btn btn-dark" id="tombol2">Klik !</button>
+        <button class="btn btn-warning" id="tombol3">Klik !</button>
+        <button class="btn btn-secondary" id="tombol4">Claim !</button>
+        <p id="testhasil"></p>
+        
+
+        <script>
+            let teks = 'Rehan'
+            document.getElementById('tombol2').onclick =()=>{
+                alert('Pesan tombol 2')
+            }
+            // cara ketiga dengan event listener
+            // document.getElementById('tombol3').addEventListener('click', ()=>{
+              //  alert('Pesan tombol 3')
+            // })
+
+            document.getElementById('tombol4').addEventListener('click',async()=>{
+                // ambil data dari server
+
+                   await fetch('https://dummyjson.com/products/20')
+                    .then(res=>res.json())
+                    .then(data=>{
+                        console.log(data.title)
+                        teks = data.title
+                    })
+                    
+                    // tampilkan variable diatas
+                    document.getElementById('testhasil').textContent = teks
+            })
+
+        </script>
+</body>
+</html>
